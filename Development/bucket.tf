@@ -1,3 +1,5 @@
+
+# creationg of bucket
 resource "google_storage_bucket" "auto-expire" {
   name          = "dev-bucket-12341"
   location      = "US"
@@ -5,5 +7,4 @@ resource "google_storage_bucket" "auto-expire" {
 
   public_access_prevention = "enforced"
 }
-
-# creation of bucket 
+ 

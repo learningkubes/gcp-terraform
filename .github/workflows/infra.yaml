@@ -24,5 +24,9 @@ jobs:
           credentials_json: '${{ secrets.GCP_CREDS }}'
       - name: set up gcloud
         uses: 'google-github-actions/setup-gcloud@v2'
-      - name: 'Use gcloud cli'
-        run: 'gcloud info'
+      - name: initializing terraform
+        run: 'terraform init'
+      - name: syntax validation
+        run: 'terraform validate'
+      - name: applying terraform changes
+        run: 'terraform apply --auto-approve'
