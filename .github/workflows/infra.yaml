@@ -4,7 +4,7 @@ on:
     branches:
       - 'dev'
     paths:
-     - 'Development'
+     - 'Development/**'
 jobs:
   dev-infra:
     if: github.ref == 'refs/heads/dev'
