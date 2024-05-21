@@ -10,4 +10,10 @@ terraform {
       version = "5.30.0"
     }
   }
+
+  backend "gcs" {
+   bucket  = "tf-state-file-dev"
+   prefix  = "terraform/state"
+ }
+
 }
