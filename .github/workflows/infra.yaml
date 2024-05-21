@@ -1,0 +1,27 @@
+name: creating infra
+on:
+  push:
+    branches:
+      - 'development'
+    paths:
+      - "Development"
+jobs:
+  dev-infra:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Development
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: authenticate with gcp
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDS }}'
+      - name: set up gcloud
+        uses: 'google-github-actions/setup-gcloud@v2'
+      - name: 'Use gcloud cli'
+        run: 'gcloud info'
