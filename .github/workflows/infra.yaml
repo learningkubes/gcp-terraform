@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - 'dev'
-    # paths:
-    #   - './Development'
+    paths:
+     - 'Development'
 jobs:
   dev-infra:
     if: github.ref == 'refs/heads/dev'
