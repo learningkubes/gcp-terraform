@@ -5,3 +5,5 @@ resource "google_storage_bucket" "auto-expire" {
 
   public_access_prevention = "enforced"
 }
+
+# creation of bucket
