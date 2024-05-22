@@ -1,5 +1,5 @@
 
-# creationg of bucket   
+# creationg of bucket    
 resource "google_storage_bucket" "auto-expire" {
   name          = "int-bucket-12341"
   location      = "US"
